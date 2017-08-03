@@ -1,19 +1,12 @@
-package bootstrap.config
+package ru.sbt
 
 import com.typesafe.config.Config
 
 import scala.collection.JavaConverters._
-import scala.util.Try
 
-/**
-  * Created by sbt-kanishev-aa on 05.04.2017.
-  */
-object ConfigHelper {
+trait ConfigHelper {
 
   implicit class RichConfig(val config: Config) {
-    def getOptional[T](getter: Config => T): Option[T] = {
-      Try(getter.apply(config)).map(Option(_)).getOrElse(None)
-    }
 
     def getPropertiesMap(mapConfigPath: String) = {
       config.getObjectList(mapConfigPath).asScala.flatMap { item =>
@@ -21,16 +14,16 @@ object ConfigHelper {
         for (entry <- entrySet)
           yield {
             val value: AnyRef = entry.getValue.unwrapped()
-            entry.getKey -> s"$value"
+            entry.getKey -> value
           }
-      }.toMap
+      }.toMap.asJava
     }
 
-    def apply(config: Config): RichConfig = {
-      new RichConfig(config)
-    }
+    /*    def apply(config: Config): RichConfig = {
+          new RichConfig(config)
+        }
 
-    def toRichConfig(config: Config): RichConfig = RichConfig(config)
+        def toRichConfig(config: Config): RichConfig = RichConfig(config)*/
   }
 
 }

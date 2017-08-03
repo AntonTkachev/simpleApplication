@@ -1,1 +1,30 @@
 apply plugin: 'scala'
+
+sourceCompatibility = 1.8
+
+
+repositories {
+    maven {
+        url "http://sbtnexus.ca.sbrf.ru:8081/nexus/content/groups/esb_group"
+    }
+    mavenCentral()
+}
+
+dependencies {
+/*
+    compile 'org.scala-lang:scala-library:2.12.2'
+    compile 'net.manub:scalatest-embedded-kafka_2.12:0.12.0'
+    compile 'com.typesafe:config:1.2.1'
+    compile 'com.typesafe.scala-logging:scala-logging_2.12:3.5.0'
+    compile 'org.slf4j:log4j-over-slf4j:1.7.25'
+    */
+
+    compile 'net.manub:scalatest-embedded-kafka_2.12:0.12.0'
+    compile kafka
+    compile kafkaClients
+    compile typesafeConfig
+    compile scalaLogging
+    compile logbackCore
+    compile logbackClassic
+    compile log4jSlf4j
+}

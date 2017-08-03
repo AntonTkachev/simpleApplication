@@ -14,9 +14,9 @@ trait ConfigHelper {
         for (entry <- entrySet)
           yield {
             val value: AnyRef = entry.getValue.unwrapped()
-            entry.getKey -> s"$value"
+            entry.getKey -> value
           }
-      }.toMap
+      }.toMap.asJava
     }
 
 /*    def apply(config: Config): RichConfig = {

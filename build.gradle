@@ -1,3 +1,12 @@
-repositories {
-    mavenCentral()
+ext {
+    scalaFull = "$scala_version"
+    scalaShort = scalaFull.substring(0, scalaFull.lastIndexOf("."))
+
+    kafka = "org.apache.kafka:kafka_${scalaShort}:$kafka_version"
+    kafkaClients = "org.apache.kafka:kafka-clients:$kafka_version"
+    typesafeConfig = "com.typesafe:config:$typesafe_config_version"
+    scalaLogging = "com.typesafe.scala-logging:scala-logging_$scalaShort:$scala_logging_version"
+    logbackCore = "ch.qos.logback:logback-core:$logback_version"
+    logbackClassic = "ch.qos.logback:logback-classic:$logback_version"
+    log4jSlf4j = "org.slf4j:log4j-over-slf4j:$slf4j_version"
 }
