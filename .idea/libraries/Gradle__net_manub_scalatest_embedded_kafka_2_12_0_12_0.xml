@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="Gradle: net.manub:scalatest-embedded-kafka_2.12:0.12.0">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.manub/scalatest-embedded-kafka_2.12/0.12.0/7dc1c49de2e82a8200361fb39c8d7c4e285f87ba/scalatest-embedded-kafka_2.12-0.12.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.manub/scalatest-embedded-kafka_2.12/0.12.0/2221875c5c4a4da5b10acd11335e2d04f3139f35/scalatest-embedded-kafka_2.12-0.12.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
